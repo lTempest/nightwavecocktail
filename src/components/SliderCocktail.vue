@@ -50,8 +50,6 @@ export default {
   background-color: black;
 }
 #down {
-  display: block;
-  margin: 0 auto;
   height: 100%;
   width: 100%;
 }

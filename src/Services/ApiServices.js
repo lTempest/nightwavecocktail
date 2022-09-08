@@ -42,4 +42,7 @@ export default class ApiService {
   getListCat() {
     return fetch(`https://www.thecocktaildb.com/api/json/v1/1/list.php?c=list`);
   }
+  getRatingCocktail(id) {
+    return fetch(`http://localhost:4000/Api/idDrink/${id}`);
+  }
 }

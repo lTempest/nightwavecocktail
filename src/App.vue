@@ -26,6 +26,9 @@
         placeholder="Search Cocktail"
       />
     </form>
+    <router-link to="/connexion"
+      ><img class="connect" src="./assets/logoco.png" alt="logoconnect"
+    /></router-link>
   </nav>
   <router-view :key="$route.fullPath" />
 </template>
@@ -134,15 +137,28 @@ input {
   left: -20px;
   width: 150px;
 }
+.connect {
+  width: 50px;
+  border: 1px solid #497dff;
+  box-shadow: 0px 1px 2px #f5058d, 0px -1px 3px #f5058d;
+  border-radius: 50%;
+  padding: 5px;
+}
 @media screen and (max-width: 1050px) {
   #logohere {
     position: initial;
     width: 70px;
   }
+  .connect {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+  }
 }
 @media screen and (max-width: 550px) {
   nav {
     flex-direction: column;
+    position: initial;
   }
   #cacher {
     text-align: center;
