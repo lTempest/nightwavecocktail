@@ -45,4 +45,7 @@ export default class ApiService {
   getRatingCocktail(id) {
     return fetch(`http://localhost:4000/Api/idDrink/${id}`);
   }
+  getUserVerif(mailAdre) {
+    return fetch(`http://localhost:4000/connect/login/${mailAdre}`);
+  }
 }

@@ -11,6 +11,9 @@ let UserSchema = new Schema({
     },
     Birthday: {
         type: String
+    },
+    Name: {
+        type: String
     }
 }, {
     collection: "user"

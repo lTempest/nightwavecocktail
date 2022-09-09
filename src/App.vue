@@ -24,15 +24,27 @@
         name="slug"
         v-model="slug"
         placeholder="Search Cocktail"
+        id="input2"
       />
     </form>
-    <router-link to="/connexion"
-      ><img class="connect" src="./assets/logoco.png" alt="logoconnect"
-    /></router-link>
+    <img
+      @click="hover2 = true"
+      :class="{ active: hover2 }"
+      class="connect"
+      src="./assets/logoco.png"
+      alt="logoconnect"
+    />
+    <ConnectPhere
+      @mouseleave="hover2 = false"
+      :class="{ active2: hover2 }"
+      id="cacher"
+    />
   </nav>
   <router-view :key="$route.fullPath" />
 </template>
-
+<script setup>
+import ConnectPhere from "@/components/ConnectPhere.vue";
+</script>
 <script>
 import ApiService from "@/Services/ApiServices";
 
@@ -42,6 +54,7 @@ export default {
   data() {
     return {
       hover: false,
+      hover2: false,
       slug: "",
       data: [],
     };
@@ -83,7 +96,7 @@ nav {
   justify-content: space-between;
   align-items: center;
   position: sticky;
-  z-index: 9999;
+  z-index: 9999999;
   top: 0%;
   border-bottom: 1px solid #f5058d;
   box-shadow: 0px 1px 3px #f5058d;
@@ -124,7 +137,7 @@ nav a,
   visibility: initial !important;
 }
 
-input {
+#input2 {
   width: 200px;
   padding: 5px;
   border-radius: 15px;
@@ -143,6 +156,8 @@ input {
   box-shadow: 0px 1px 2px #f5058d, 0px -1px 3px #f5058d;
   border-radius: 50%;
   padding: 5px;
+  cursor: pointer;
+  z-index: 999;
 }
 @media screen and (max-width: 1050px) {
   #logohere {

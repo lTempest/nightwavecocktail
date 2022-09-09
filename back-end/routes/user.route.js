@@ -24,14 +24,20 @@ UserRoute.route("/create").post((req, res) => {
     })
 })
 
-UserRoute.route("/entry/:mailADr").post((req, res) => {
-    UserModel.find({mailADr: req.params.mailADre},(error, data) => {
+UserRoute.route("/login/:user").get((req, res) => {
+    const ConnectUser = req.params.UserV;
+    try {
+        UserModel.find({user: ConnectUser},(error, data) => {
         if(error){
-            return next(error)
+            console.log(err)
         } else {
             res.json(data)
         }
     })
+    } catch {
+        console.log("Error")
+    }
+    
 })
 
 module.exports = UserRoute

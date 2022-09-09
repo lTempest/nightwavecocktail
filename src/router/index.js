@@ -4,7 +4,6 @@ import OnlySurprise from "../views/SuprisePage.vue";
 import infoCocktail from "../views/InfoCocktail.vue";
 import Noalcoholic from "../views/NonAlcoholic.vue";
 import ResultSearch from "../views/ResultSearch.vue";
-import ConnexionPage from "../views/ConnexionPage.vue";
 
 const routes = [
   {
@@ -31,11 +30,6 @@ const routes = [
     path: "/search",
     name: "search",
     component: ResultSearch,
-  },
-  {
-    path: "/connexion",
-    name: "connexionPage",
-    component: ConnexionPage,
   },
 ];
 
